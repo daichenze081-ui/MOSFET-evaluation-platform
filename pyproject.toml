@@ -1,0 +1,24 @@
+[project]
+name = "mosfet-device-analytics-portfolio"
+version = "0.1.0"
+description = "Portfolio demonstration of MOSFET curve assessment and prediction"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "All rights reserved"}
+dependencies = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "pyyaml",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+mosfet-platform = "mosfet_platform.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]
