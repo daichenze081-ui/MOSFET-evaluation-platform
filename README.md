@@ -16,8 +16,10 @@ evidence when other metrics are missing, and reports per-metric exceedance,
 co-occurrence, and geometry groups separately for each data source. Each run
 saves JSON, CSV, and an HTML report. The callable `mosfet_platform.api.diagnose`
 service and request JSON Schema provide the boundary for a future agent.
-See [local diagnostic inputs and results](docs/diagnosis.md). Model completion
-is not performed by this entry point; unavailable metrics remain explicit gaps.
+See [local diagnostic inputs and results](docs/diagnosis.md). By default,
+unavailable metrics remain explicit gaps. An optional `completion` request
+compares the existing model with observed metrics and marks predictions used
+to fill missing metrics; valid measurements keep priority.
 
 ## Run the complete workflow
 
