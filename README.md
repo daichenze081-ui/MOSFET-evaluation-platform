@@ -16,8 +16,7 @@ evidence when other metrics are missing, and reports per-metric exceedance,
 co-occurrence, and geometry groups separately for each data source. Each run
 saves JSON, CSV, and an HTML report. The callable `mosfet_platform.api.diagnose`
 service and request JSON Schema provide the boundary for a future agent.
-See [local diagnostic inputs and results](docs/diagnosis.md). By default,
-unavailable metrics remain explicit gaps. An optional `completion` request
+By default, unavailable metrics remain explicit gaps. An optional `completion` request
 compares the existing model with observed metrics and marks predictions used
 to fill missing metrics; valid measurements keep priority.
 
@@ -55,8 +54,8 @@ error, and exits with code 1. Independent validation is optional; NOT_RUN is
 never reported as independent qualification. Use `--retrain` for an explicit
 retry without changing the inputs.
 
-See [the workflow and input contract](docs/workflow.md) for schemas, units,
-validation policies, model versioning, and result definitions.
+The Python API exposes the diagnostic request schema; the CLI and Python API
+use the same validation and result format.
 
 ## Results and storage
 

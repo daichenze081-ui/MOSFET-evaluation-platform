@@ -54,8 +54,8 @@ def test_synthetic_demo_runs_both_public_workflows(tmp_path):
 def test_readme_documents_the_complete_workflow():
     root = Path(__file__).resolve().parents[1]
     readme = (root / "README.md").read_text(encoding="utf-8")
-    expected = ("python -m examples.platform_demo", "result.html", "docs/workflow.md")
+    expected = ("python -m examples.platform_demo", "result.html", "mosfet-platform update")
     for evidence in expected:
         assert evidence in readme
-    assert (root / "docs/workflow.md").is_file()
     assert (root / "examples/platform_demo.py").is_file()
+    assert (root / "src/mosfet_platform/workflows/update.py").is_file()
